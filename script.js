@@ -1,12 +1,6 @@
-// ============================================
-// GAMEWORLD - ASSIGNMENT 7: jQuery Implementation
-// WITH FULL THEME & LANGUAGE SUPPORT
-// ============================================
-
-// TASK 0: jQuery Ready Function
+// jQuery Ready Function
 $(document).ready(function() {
   console.log("✅ jQuery is ready!");
-  console.log("🎮 GameWorld Assignment 7 loaded!");
   
   // Initialize all features
   initScrollProgress();
@@ -21,18 +15,16 @@ $(document).ready(function() {
   initLanguageSystem();
   initDateTime();
   
-  // ============================================
-  // ASSIGNMENT 8: INIT THEME SYSTEM WITH LOCAL STORAGE
-  // ============================================
+
   initThemeSystem();
   
   // Show welcome toast
   showToast("Welcome to GameWorld!", "info");
 });
 
-// ============================================
-// ASSIGNMENT 8 - TASK 6: DARK/LIGHT MODE WITH LOCAL STORAGE
-// ============================================
+
+//DARK/LIGHT MODE WITH LOCAL STORAGE
+
 function initThemeSystem() {
   // Check if theme preference exists in Local Storage
   const savedTheme = localStorage.getItem('gameworld-theme');
@@ -46,9 +38,7 @@ function initThemeSystem() {
   }
 }
 
-// ============================================
-// MULTILANGUAGE TRANSLATIONS
-// ============================================
+// multilanguage translation
 const translations = {
   kk: {
     home: "Басты бет",
@@ -159,9 +149,7 @@ const translations = {
 
 let currentLanguage = "kk";
 
-// ============================================
-// TASK 4: Scroll Progress Bar
-// ============================================
+// Scroll Progress Bar
 function initScrollProgress() {
   $(window).on('scroll', function() {
     const scrollTop = $(window).scrollTop();
@@ -172,9 +160,7 @@ function initScrollProgress() {
   });
 }
 
-// ============================================
-// TASK 5: Animated Number Counter
-// ============================================
+// Animated Number Counter
 function initAnimatedCounters() {
   let countersAnimated = false;
   
@@ -208,10 +194,10 @@ function initAnimatedCounters() {
     });
   });
 }
+ 
 
-// ============================================
-// TASK 9: Lazy Loading Images
-// ============================================
+// Lazy Loading Images
+
 function initLazyLoading() {
   function loadVisibleImages() {
     $('.lazy-image').each(function() {
@@ -237,9 +223,9 @@ function initLazyLoading() {
   loadVisibleImages();
 }
 
-// ============================================
-// TASK 1: Real-time Search and Live Filter
-// ============================================
+
+// Real-time Search and Live Filter
+
 function initNewsSearch() {
   $('#newsSearchBar').on('keyup', function() {
     const searchTerm = $(this).val().toLowerCase().trim();
@@ -287,9 +273,9 @@ function initNewsSearch() {
   });
 }
 
-// ============================================
-// TASK 2: Autocomplete Search Suggestions
-// ============================================
+
+// Autocomplete Search Suggestions
+
 function initAutocomplete() {
   const suggestions = [
     "Assassin's Creed Returns",
@@ -345,9 +331,9 @@ $(document).on('click', function(e) {
   }
 });
 
-// ============================================
-// TASK 3: Search Highlighting in FAQ
-// ============================================
+
+// Search Highlighting in FAQ
+
 function initFAQSearch() {
   let originalContent = [];
   
@@ -400,9 +386,9 @@ function initFAQSearch() {
   });
 }
 
-// ============================================
-// ASSIGNMENT 8 - TASK 6: FORM VALIDATION WITH LOCAL STORAGE THEME INTEGRATION
-// ============================================
+
+// FORM VALIDATION WITH LOCAL STORAGE THEME INTEGRATION
+
 function initContactForm() {
   $('#contactForm').on('submit', function(e) {
     e.preventDefault();
@@ -484,9 +470,9 @@ function initContactForm() {
   });
 }
 
-// ============================================
-// TASK 7: Toast Notification System
-// ============================================
+
+//Toast Notification System
+
 function showToast(message, type = 'info') {
   const icons = {
     success: '✅',
@@ -531,9 +517,9 @@ function showToast(message, type = 'info') {
   });
 }
 
-// ============================================
-// TASK 8: Copy to Clipboard
-// ============================================
+
+//  Copy to Clipboard
+
 function initCopyToClipboard() {
   $('.copy-btn').on('click', function() {
     const $btn = $(this);
@@ -559,9 +545,9 @@ function initCopyToClipboard() {
   });
 }
 
-// ============================================
+
 // EVENT HANDLERS
-// ============================================
+
 function initEventHandlers() {
   // Gallery image click
   $('.thumbnail-img').on('click', function() {
@@ -594,9 +580,9 @@ function initEventHandlers() {
     }
   });
   
-  // ============================================
+
   // ASSIGNMENT 8: Theme toggle with LOCAL STORAGE
-  // ============================================
+
   let isDarkTheme = !$('body').hasClass('light-theme');
   $('.toggle-theme-btn').on('click', function() {
     $('body').toggleClass('light-theme');
@@ -738,9 +724,9 @@ function initEventHandlers() {
   });
 }
 
-// ============================================
-// MULTILANGUAGE SYSTEM
-// ============================================
+
+// multilanguage system
+
 function initLanguageSystem() {
   $('#languageSelector').on('change', function() {
     const lang = $(this).val();
@@ -776,9 +762,9 @@ function updateLanguage(lang) {
   });
 }
 
-// ============================================
+
 // DATE/TIME DISPLAY
-// ============================================
+
 function initDateTime() {
   function updateTime() {
     const now = new Date();
@@ -793,9 +779,9 @@ function initDateTime() {
   setInterval(updateTime, 1000);
 }
 
-// ============================================
+
 // KEYBOARD NAVIGATION
-// ============================================
+
 $(document).on('keydown', function(e) {
   const $navLinks = $('#mainNav .nav-link');
   const $focused = $(':focus');
